@@ -1,0 +1,12 @@
+/home/lukas/STM32CubeIDE/workspace/ProSem3_Gaszaehler/Drivers/SHALF1/Src/shalf1USART.c:23:6:USARTEnable	16	static
+/home/lukas/STM32CubeIDE/workspace/ProSem3_Gaszaehler/Drivers/SHALF1/Src/shalf1USART.c:46:6:USARTDisable	16	static
+/home/lukas/STM32CubeIDE/workspace/ProSem3_Gaszaehler/Drivers/SHALF1/Src/shalf1USART.c:70:6:USARTSetBaudrate	16	static
+/home/lukas/STM32CubeIDE/workspace/ProSem3_Gaszaehler/Drivers/SHALF1/Src/shalf1USART.c:85:6:USARTRXOn	16	static
+/home/lukas/STM32CubeIDE/workspace/ProSem3_Gaszaehler/Drivers/SHALF1/Src/shalf1USART.c:100:6:USARTTXOn	16	static
+/home/lukas/STM32CubeIDE/workspace/ProSem3_Gaszaehler/Drivers/SHALF1/Src/shalf1USART.c:122:13:USARTIRQ	16	static
+/home/lukas/STM32CubeIDE/workspace/ProSem3_Gaszaehler/Drivers/SHALF1/Src/shalf1USART.c:191:13:USARTSendString	16	static
+/home/lukas/STM32CubeIDE/workspace/ProSem3_Gaszaehler/Drivers/SHALF1/Src/shalf1USART.c:205:13:USARTSendChar	16	static
+/home/lukas/STM32CubeIDE/workspace/ProSem3_Gaszaehler/Drivers/SHALF1/Src/shalf1USART.c:216:13:USARTGetChar	24	static
+/home/lukas/STM32CubeIDE/workspace/ProSem3_Gaszaehler/Drivers/SHALF1/Src/shalf1USART.c:231:13:USARTGetString	32	static
+/home/lukas/STM32CubeIDE/workspace/ProSem3_Gaszaehler/Drivers/SHALF1/Src/shalf1USART.c:248:13:usartSetDmaTxMode	16	static
+/home/lukas/STM32CubeIDE/workspace/ProSem3_Gaszaehler/Drivers/SHALF1/Src/shalf1USART.c:264:13:usartSetDmaRxMode	16	static

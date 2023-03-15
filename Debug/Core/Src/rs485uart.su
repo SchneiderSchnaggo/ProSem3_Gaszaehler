@@ -1,0 +1,2 @@
+../Core/Src/rs485uart.c:12:6:initRS485UART	8	static,ignoring_inline_asm
+../Core/Src/rs485uart.c:30:6:initUSARTDMA	64	static

@@ -1,0 +1,2 @@
+../Core/Src/shalf1RCC.c:27:13:setClock	24	static
+../Core/Src/shalf1RCC.c:56:13:setSysClockPLL	16	static

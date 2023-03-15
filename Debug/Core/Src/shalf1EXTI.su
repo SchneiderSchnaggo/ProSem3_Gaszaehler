@@ -1,0 +1,4 @@
+../Core/Src/shalf1EXTI.c:16:13:extiConfigureEXTI	24	static
+../Core/Src/shalf1EXTI.c:79:13:extiEnableIrq	16	static
+../Core/Src/shalf1EXTI.c:107:13:extiDisableIrq	16	static
+../Core/Src/shalf1EXTI.c:135:13:extiSetTriggerEdge	16	static

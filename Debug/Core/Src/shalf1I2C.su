@@ -1,0 +1,7 @@
+../Core/Src/shalf1I2C.c:32:13:i2cInit	16	static
+../Core/Src/shalf1I2C.c:70:13:i2cWriteByte	16	static
+../Core/Src/shalf1I2C.c:100:16:i2cReadByte	24	static
+../Core/Src/shalf1I2C.c:137:13:i2cWriteReg	16	static
+../Core/Src/shalf1I2C.c:167:16:i2cReadReg	24	static
+../Core/Src/shalf1I2C.c:201:13:i2cBurstWrite	32	static
+../Core/Src/shalf1I2C.c:237:13:i2cBurstRead	24	static

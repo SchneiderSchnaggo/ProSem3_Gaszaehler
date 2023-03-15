@@ -1,0 +1,10 @@
+../Core/Src/shalf1ADC.c:15:13:initADC	16	static
+../Core/Src/shalf1ADC.c:28:22:adcSetupSequence	16	static
+../Core/Src/shalf1ADC.c:49:22:adcSetSequenceLength	16	static
+../Core/Src/shalf1ADC.c:60:13:adcSetTrigger	16	static
+../Core/Src/shalf1ADC.c:65:17:adcRead	16	static
+../Core/Src/shalf1ADC.c:100:22:adcInitDMA	64	static
+../Core/Src/shalf1ADC.c:124:13:adcDMAReload	48	static
+../Core/Src/shalf1ADC.c:131:13:adcCalibrate	16	static
+../Core/Src/shalf1ADC.c:136:22:adcDataAlignment	16	static
+../Core/Src/shalf1ADC.c:146:22:adcSetCyclesOfConversion	16	static

@@ -1,0 +1,4 @@
+../Core/Src/shalf1SPI.c:36:13:spiInit	24	static
+../Core/Src/shalf1SPI.c:126:13:spiEnable	16	static
+../Core/Src/shalf1SPI.c:135:13:spiDisable	16	static
+../Core/Src/shalf1SPI.c:148:16:spiTransceive	32	static

@@ -1,0 +1,6 @@
+../Core/Src/program.c:24:6:start	8	static
+../Core/Src/program.c:36:6:USART1_IRQHandler	4	static
+../Core/Src/program.c:53:6:indicateMagnet	8	static
+../Core/Src/program.c:77:6:initPins	8	static
+../Core/Src/program.c:90:6:outputClock	8	static
+../Core/Src/program.c:99:6:delay	16	static

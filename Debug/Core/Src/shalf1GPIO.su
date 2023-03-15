@@ -1,0 +1,11 @@
+../Core/Src/shalf1GPIO.c:14:13:gpioInitPort	16	static
+../Core/Src/shalf1GPIO.c:41:13:gpioSetupPin	16	static
+../Core/Src/shalf1GPIO.c:61:13:gpioSetupInput	16	static
+../Core/Src/shalf1GPIO.c:81:13:gpioSetupMode	16	static
+../Core/Src/shalf1GPIO.c:96:13:gpioSetPin	16	static
+../Core/Src/shalf1GPIO.c:106:13:gpioResetPin	16	static
+../Core/Src/shalf1GPIO.c:117:13:gpioSetPullupPulldown	16	static
+../Core/Src/shalf1GPIO.c:132:13:gpioGetPinVal	16	static
+../Core/Src/shalf1GPIO.c:141:17:gpioGetPortVal	16	static
+../Core/Src/shalf1GPIO.c:151:13:gpioTogglePin	16	static
+../Core/Src/shalf1GPIO.c:167:13:afioInit	4	static
