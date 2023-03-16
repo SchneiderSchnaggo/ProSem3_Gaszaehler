@@ -19,11 +19,12 @@ void initRS485UART(void){
 	gpioSetupPin(GPIOA, PIN10, INPUT);
 	gpioSetupInput(GPIOA, PIN10, FLOATING);
 	USARTIRQ(USART1, USART_IRQ_RXNEIE, true);
-	usartSetDmaRxMode(USART1, DMA_RECEIVE_ON);
+	//usartSetDmaRxMode(USART1, DMA_RECEIVE_ON);
 	//gpioSetupOutput(GPIOA, PIN3, AF_PP);
 	USARTSetBaudrate(USART1, 9600);
 	USARTTXOn(USART1, TRANSMITTER_ON);
 	USARTRXOn(USART1, RECEIVER_ON);
+	NVIC_EnableIRQ(USART1_IRQn);
 	__enable_irq();
 }
 

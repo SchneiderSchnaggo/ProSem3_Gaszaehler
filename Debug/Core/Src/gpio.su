@@ -1,0 +1,2 @@
+../Core/Src/gpio.c:9:6:initPins	8	static
+../Core/Src/gpio.c:22:6:outputClock	8	static

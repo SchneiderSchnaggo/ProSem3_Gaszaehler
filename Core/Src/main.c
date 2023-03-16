@@ -21,6 +21,7 @@
 #include "usb_device.h"
 #include "shalf1.h"
 #include "program.h"
+#include <stdio.h>
 
 /* Private includes ----------------------------------------------------------*/
 /* USER CODE BEGIN Includes */

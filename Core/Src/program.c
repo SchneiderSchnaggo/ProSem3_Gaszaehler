@@ -11,41 +11,55 @@
 #include <shalf1RCC.h>
 #include "rs485uart.h"
 #include "modbusRTU.h"
+#include <stdio.h>
+#include "gpio.h"
 
-void initPins();
+#define USART_MSG_LEN  6
+
+
 void indicateMagnet();
-void outputClock();
 void delay(void);
+void usartTest(void);
+char rcv;
+
+int cnt;
 
 bool usartRXFlag = false;
-uint8_t usartBuff[6];
+char usartBuff[USART_MSG_LEN];
 uint8_t byteNum = 0;
 
 void start(void){
-	initUSARTDMA((uint32_t*)usartBuff);
-	initRS485UART();
+	initPins();
+	indicateMagnet();
+
+	//initUSARTDMA((uint32_t*)usartBuff);
+	//initRS485UART();
+	/*indicateMagnet();
 	while(1){
 		if(usartRXFlag){
 			//modbusrequest()hier implementieren!
 			usartRXFlag = false;
 			modbusResponse(usartBuff, sizeof(usartBuff)/sizeof(uint8_t));
 		}
-	}
+	}*/
 }
 
 void USART1_IRQHandler(void){
-	//do some Stuff here
-	/*char received;
-	if(USART1->SR & USART_SR_RXNEIE){
-		received = USART1->DR & 0x01FF;
+	cnt = USART_MSG_LEN;
+	rcv = USART1->DR & 0x01FF;
+	int i = 0;
+	while((rcv != '\n') && (cnt != 0)){
+		while(!(USART1->SR & USART_SR_RXNE)){
+		}
+
+		usartBuff[i++] = rcv;
+		cnt--;
 	}
-	*usartBuff[byteNUm] = received;
-	if(byteNum < 5){
-		byteNum++;
-	}
-	else{
-		bbyteNum = 0;
-	}*/
+	usartBuff[USART_MSG_LEN] = '\0';
+	//gpioSetPin(GPIOB, PIN12);
+	//USARTSendString(USART1, usartBuff);
+	//gpioResetPin(GPIOB, PIN12);
+	USART1->CR1 &= ~USART_CR1_RXNEIE_Msk;
 	usartRXFlag = true;
 }
 
@@ -56,47 +70,43 @@ void indicateMagnet(){
 	systickSetTicks(1);
 	initRS485UART();
 	gpioSetPin(GPIOC, PIN4);
+	int tickCNT = 0;
+	char ausg[20];
 	while(1){
 		/*if(isSysTickExpired()){
 			gpioTogglePin(GPIOC, PIN4);
 			systickSetTicks(1);
 		}*/
+		USART1->CR1 |= USART_CR1_RXNEIE;
 		if(!gpioGetPinVal(GPIOC, PIN9)){
 			gpioSetPin(GPIOC, PIN4);
 			gpioSetPin(GPIOB, PIN12);
-			USARTSendString(USART1, "Tick \n");
+			USARTSendString(USART1, "Tick\n");
+			tickCNT++;
 			gpioResetPin(GPIOB, PIN12);
-			delay();
 		}
 		else{
 			gpioResetPin(GPIOC, PIN4);
 		}
+		if(usartRXFlag){
+			usartRXFlag = false;
+			if(usartBuff[0] == 69){
+				gpioSetPin(GPIOB, PIN12);
+				sprintf(ausg, "tick: %d", tickCNT);
+				USARTSendString(USART1, ausg);
+				gpioResetPin(GPIOB, PIN12);
+				delay();
+
+			}
+		}
 	}
 }
 
-void initPins(){
-	gpioInitPort(GPIOC);
-	gpioSetupPin(GPIOC, PIN4, OUT_2MHZ);
-	gpioSetupMode(GPIOC, PIN4, GP_PP);
-	gpioSetupPin(GPIOC, PIN9, INPUT);
-	gpioSetupInput(GPIOC, PIN9, IN_PUPD);
-	gpioSetPullupPulldown(GPIOC, PIN9, true);
-	gpioInitPort(GPIOB);
-	gpioSetupPin(GPIOB, PIN12, OUT_2MHZ);
-	gpioSetupMode(GPIOB, PIN12, GP_PP);
-	gpioResetPin(GPIOB, PIN12);
-}
 
-void outputClock(){
-	gpioInitPort(GPIOA);
-	afioInit();
-	gpioSetupPin(GPIOA, PIN8, OUT_50MHZ);
-	gpioSetupMode(GPIOA, PIN8, AF_PP);
-	setClock(HSI, SYSCLK_32, APB_8MHZ, APB_8MHZ);
-	RCC->CFGR |= RCC_CFGR_MCO_SYSCLK;
-}
 
 void delay(void){
 	int i=0;
 	for(i=0; i < 1600000; i++){}
 }
+
+
