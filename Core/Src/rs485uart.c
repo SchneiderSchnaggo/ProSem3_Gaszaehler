@@ -7,6 +7,7 @@
 
 #include <shalf1.h>
 #include <stdbool.h>
+#include "rs485uart.h"
 
 //USART in DMA Modus -> Modbus empfängt 5 Bytes
 void initRS485UART(void){
@@ -32,3 +33,5 @@ void initUSARTDMA(uint32_t* memAdr){
 	uint8_t foo;
 	foo = dmaInit(DMA1, DMA1_Channel5, USART1->DR, memAdr, 6, FROM_PER, DMA_CIRC_OFF, 1, 0, MSIZE_8BIT, PSIZE_8BIT, PRIO_HIGH, DMA_TCI);
 }
+
+

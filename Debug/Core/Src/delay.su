@@ -1,0 +1,4 @@
+../Drivers/CMSIS/Include/core_cm3.h:1511:22:__NVIC_EnableIRQ	16	static
+../Core/Src/delay.c:14:6:initTimer	8	static,ignoring_inline_asm
+../Core/Src/delay.c:24:13:delay_ms	16	static
+../Core/Src/delay.c:31:6:TIM2_IRQHandler	4	static

@@ -29,7 +29,8 @@ Core/Src/rs485uart.o: ../Core/Src/rs485uart.c ../Core/Inc/shalf1.h \
  ../Core/Inc/shalf1I2C.h ../Core/Inc/shalf1RCC.h ../Core/Inc/shalf1SPI.h \
  ../Core/Inc/shalf1SysTick.h ../Core/Inc/shalf1Timer.h \
  ../Core/Inc/shalf1USART.h \
- ../Drivers/CMSIS/Device/ST/STM32F1xx/Include/system_stm32f1xx.h
+ ../Drivers/CMSIS/Device/ST/STM32F1xx/Include/system_stm32f1xx.h \
+ ../Core/Inc/rs485uart.h
 ../Core/Inc/shalf1.h:
 ../Core/Inc/shalf1DMA.h:
 ../Drivers/CMSIS/Device/ST/STM32F1xx/Include/stm32f1xx.h:
@@ -66,3 +67,4 @@ Core/Src/rs485uart.o: ../Core/Src/rs485uart.c ../Core/Inc/shalf1.h \
 ../Core/Inc/shalf1Timer.h:
 ../Core/Inc/shalf1USART.h:
 ../Drivers/CMSIS/Device/ST/STM32F1xx/Include/system_stm32f1xx.h:
+../Core/Inc/rs485uart.h:

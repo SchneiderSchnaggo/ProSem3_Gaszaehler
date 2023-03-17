@@ -8,6 +8,9 @@
 #ifndef INC_RS485UART_H_
 #define INC_RS485UART_H_
 
+#include <stdbool.h>
+
+
 extern void initRS485UART(void);
 extern void initUSARTDMA(uint32_t* memAdr);
 
