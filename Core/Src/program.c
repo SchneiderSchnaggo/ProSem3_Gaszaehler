@@ -37,9 +37,11 @@ void start(void){
 		if(usartRXFlag){
 			//modbusrequest()hier implementieren!
 			USART1->CR1 &= ~USART_CR1_RXNEIE_Msk;
-			sprintf(ausg, "tick: %" PRIu32 "\n", tickCNT);
+			//sprintf(ausg, "tick: %" PRIu32 "\n", tickCNT);
 			gpioSetPin(GPIOB, PIN12);
-			USARTSendString(USART1, ausg);
+			//USARTSendString(USART1, ausg);
+			setCounter(tickCNT);
+			modbusResponse(usartBuff, sizeof(usartBuff)-1);
 			USART1->CR1 |= USART_CR1_RXNEIE;
 			gpioResetPin(GPIOB, PIN12);
 			delay_ms(100);

@@ -1,5 +1,4 @@
 Core/Src/modbusRTU.o: ../Core/Src/modbusRTU.c ../Core/Inc/modbusRTU.h \
- ../Core/Inc/shalf1.h ../Core/Inc/shalf1DMA.h \
  ../Drivers/CMSIS/Device/ST/STM32F1xx/Include/stm32f1xx.h \
  ../Drivers/CMSIS/Device/ST/STM32F1xx/Include/stm32f103xe.h \
  ../Drivers/CMSIS/Include/core_cm3.h \
@@ -25,14 +24,12 @@ Core/Src/modbusRTU.o: ../Core/Src/modbusRTU.c ../Core/Inc/modbusRTU.h \
  ../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_pcd.h \
  ../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_ll_usb.h \
  ../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_pcd_ex.h \
- ../Core/Inc/shalf1EXTI.h ../Core/Inc/shalf1GPIO.h \
- ../Core/Inc/shalf1I2C.h ../Core/Inc/shalf1RCC.h ../Core/Inc/shalf1SPI.h \
- ../Core/Inc/shalf1SysTick.h ../Core/Inc/shalf1Timer.h \
- ../Core/Inc/shalf1USART.h \
+ ../Core/Inc/shalf1.h ../Core/Inc/shalf1DMA.h ../Core/Inc/shalf1EXTI.h \
+ ../Core/Inc/shalf1GPIO.h ../Core/Inc/shalf1I2C.h ../Core/Inc/shalf1RCC.h \
+ ../Core/Inc/shalf1SPI.h ../Core/Inc/shalf1SysTick.h \
+ ../Core/Inc/shalf1Timer.h ../Core/Inc/shalf1USART.h \
  ../Drivers/CMSIS/Device/ST/STM32F1xx/Include/system_stm32f1xx.h
 ../Core/Inc/modbusRTU.h:
-../Core/Inc/shalf1.h:
-../Core/Inc/shalf1DMA.h:
 ../Drivers/CMSIS/Device/ST/STM32F1xx/Include/stm32f1xx.h:
 ../Drivers/CMSIS/Device/ST/STM32F1xx/Include/stm32f103xe.h:
 ../Drivers/CMSIS/Include/core_cm3.h:
@@ -58,6 +55,8 @@ Core/Src/modbusRTU.o: ../Core/Src/modbusRTU.c ../Core/Inc/modbusRTU.h \
 ../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_pcd.h:
 ../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_ll_usb.h:
 ../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_pcd_ex.h:
+../Core/Inc/shalf1.h:
+../Core/Inc/shalf1DMA.h:
 ../Core/Inc/shalf1EXTI.h:
 ../Core/Inc/shalf1GPIO.h:
 ../Core/Inc/shalf1I2C.h:
