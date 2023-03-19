@@ -11,8 +11,7 @@
 #include <string.h>
 #include <shalf1.h>
 
-#define USART_TX_EMPTY(usart)  ((usart)->SR & USART_SR_TXE)
-#define USART_WAIT_MB(usart)      do { while(!USART_TX_EMPTY(usart)); } while(0)
+
 
 //global variables
 static uint16_t registers[2] = {69, 96};
@@ -99,7 +98,7 @@ extern void modbusResponse(char *data, uint8_t len){
 			uint16_t crc = modbusCRC(response, responseLen-2);
 			response[responseLen-2] = crc;
 			response[responseLen-1] = crc >> 8;
-			USARTSendStringMB(USART1, response, responseLen);
+			USARTSendStringMB(USART1, response, responseLen+1);
 		}
 		break;
 	default:
@@ -108,21 +107,10 @@ extern void modbusResponse(char *data, uint8_t len){
 	}
 }
 
-/*
-  * Desc.: send a String over the USART
-  * @param: (USART_TypeDef*)usart: USART
-  * @param: (char*) str: String to be sent
-  * @return: none
-  */
-void USARTSendStringMB(USART_TypeDef* usart, char* str, int len){
-	while(len != 0){
-		USART_WAIT_MB(usart);
-		usart->DR = *str++ & 0x01FF;
-		USART_WAIT_MB(usart);
-		len--;
-	}
-}
-
 void setCounter(int cntVal){
 	registers[0] = cntVal;
 }
+
+//TODO
+//-function for checking crc
+//-implement more fuccodes

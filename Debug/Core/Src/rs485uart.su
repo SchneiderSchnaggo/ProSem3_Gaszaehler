@@ -1,3 +1,4 @@
 ../Drivers/CMSIS/Include/core_cm3.h:1511:22:__NVIC_EnableIRQ	16	static
-../Core/Src/rs485uart.c:13:6:initRS485UART	8	static,ignoring_inline_asm
-../Core/Src/rs485uart.c:32:6:initUSARTDMA	64	static
+../Core/Src/rs485uart.c:16:6:initRS485UART	8	static,ignoring_inline_asm
+../Core/Src/rs485uart.c:35:6:initUSARTDMA	64	static
+../Core/Src/rs485uart.c:46:6:USARTSendStringMB	24	static

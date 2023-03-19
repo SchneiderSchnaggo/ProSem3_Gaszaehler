@@ -18,7 +18,7 @@
 #include "rs485uart.h"
 #include "modbusRTU.h"
 
-#define USART_MSG_LEN  7
+#define USART_MSG_LEN  9
 
 static char usartBuff[USART_MSG_LEN];
 static char rcv;
@@ -35,19 +35,14 @@ void start(void){
 	initPins();
 	while(1){
 		if(usartRXFlag){
-			//modbusrequest()hier implementieren!
 			USART1->CR1 &= ~USART_CR1_RXNEIE_Msk;
-			//sprintf(ausg, "tick: %" PRIu32 "\n", tickCNT);
 			gpioSetPin(GPIOB, PIN12);
-			//USARTSendString(USART1, ausg);
 			setCounter(tickCNT);
 			modbusResponse(usartBuff, sizeof(usartBuff)-1);
 			USART1->CR1 |= USART_CR1_RXNEIE;
 			gpioResetPin(GPIOB, PIN12);
 			delay_ms(100);
 			usartRXFlag = false;
-			//USART1->CR1 |= USART_CR1_RXNEIE;
-			//}
 		}
 
 	}
@@ -79,5 +74,10 @@ void USART1_IRQHandler(void){
 
 void EXTI9_5_IRQHandler(void){
 	tickCNT++;
+	gpioTogglePin(GPIOC, PIN4); //optional for debugging
 	EXTI->PR |= EXTI_PR_PR9;
 }
+
+//TODO
+//-functions for USB
+//-functions for backup registers
