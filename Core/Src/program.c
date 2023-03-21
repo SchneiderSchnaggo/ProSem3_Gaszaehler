@@ -37,7 +37,7 @@ void start(void){
 		if(usartRXFlag){
 			USART1->CR1 &= ~USART_CR1_RXNEIE_Msk;
 			gpioSetPin(GPIOB, PIN12);
-			setCounter(tickCNT2);
+			setCounter(tickCNT);
 			modbusResponse(usartBuff, sizeof(usartBuff)-1);
 			USART1->CR1 |= USART_CR1_RXNEIE;
 			gpioResetPin(GPIOB, PIN12);
