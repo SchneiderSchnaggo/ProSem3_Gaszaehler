@@ -1,6 +1,6 @@
-../Core/Src/modbusRTU.c:25:17:registerRead	16	static
-../Core/Src/modbusRTU.c:34:22:registerWrite	16	static
-../Core/Src/modbusRTU.c:44:22:setSlaveAddress	16	static
-../Core/Src/modbusRTU.c:49:17:modbusCRC	24	static
-../Core/Src/modbusRTU.c:67:13:modbusResponse	56	dynamic
-../Core/Src/modbusRTU.c:110:6:setCounter	16	static
+../Core/Src/modbusRTU.c:26:17:registerRead	16	static
+../Core/Src/modbusRTU.c:35:22:registerWrite	16	static
+../Core/Src/modbusRTU.c:45:22:setSlaveAddress	16	static
+../Core/Src/modbusRTU.c:50:17:modbusCRC	24	static
+../Core/Src/modbusRTU.c:68:13:modbusResponse	56	dynamic
+../Core/Src/modbusRTU.c:111:6:setCounter	16	static

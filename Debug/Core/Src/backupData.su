@@ -1,0 +1,3 @@
+../Core/Src/backupData.c:14:13:writeTicks	16	static
+../Core/Src/backupData.c:22:13:getTicks	16	static
+../Core/Src/backupData.c:26:17:getNumOfTicks	24	static

@@ -1,3 +1,4 @@
+"./Core/Src/backupData.o"
 "./Core/Src/delay.o"
 "./Core/Src/gpio.o"
 "./Core/Src/main.o"
@@ -6,6 +7,7 @@
 "./Core/Src/rs485uart.o"
 "./Core/Src/shalf1.o"
 "./Core/Src/shalf1ADC.o"
+"./Core/Src/shalf1Backup.o"
 "./Core/Src/shalf1DMA.o"
 "./Core/Src/shalf1EXTI.o"
 "./Core/Src/shalf1GPIO.o"

@@ -16,6 +16,7 @@
 #include <shalf1SysTick.h>
 #include <shalf1Timer.h>
 #include <shalf1USART.h>
+#include <shalf1Backup.h>
 #include <stdint.h>
 #include <stdlib.h>
 #include <stdbool.h>

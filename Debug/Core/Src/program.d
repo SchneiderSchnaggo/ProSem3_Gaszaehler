@@ -36,8 +36,9 @@ Core/Src/program.o: ../Core/Src/program.c ../Core/Inc/program.h \
  ../Core/Inc/shalf1.h ../Core/Inc/shalf1DMA.h ../Core/Inc/shalf1EXTI.h \
  ../Core/Inc/shalf1GPIO.h ../Core/Inc/shalf1I2C.h ../Core/Inc/shalf1RCC.h \
  ../Core/Inc/shalf1SPI.h ../Core/Inc/shalf1SysTick.h \
- ../Core/Inc/shalf1Timer.h ../Core/Inc/shalf1USART.h ../Core/Inc/gpio.h \
- ../Core/Inc/delay.h ../Core/Inc/rs485uart.h ../Core/Inc/modbusRTU.h
+ ../Core/Inc/shalf1Timer.h ../Core/Inc/shalf1USART.h \
+ ../Core/Inc/shalf1Backup.h ../Core/Inc/gpio.h ../Core/Inc/delay.h \
+ ../Core/Inc/rs485uart.h ../Core/Inc/modbusRTU.h ../Core/Inc/backupData.h
 ../Core/Inc/program.h:
 ../USB_DEVICE/App/usbd_cdc_if.h:
 ../Middlewares/ST/STM32_USB_Device_Library/Class/CDC/Inc/usbd_cdc.h:
@@ -84,7 +85,9 @@ Core/Src/program.o: ../Core/Src/program.c ../Core/Inc/program.h \
 ../Core/Inc/shalf1SysTick.h:
 ../Core/Inc/shalf1Timer.h:
 ../Core/Inc/shalf1USART.h:
+../Core/Inc/shalf1Backup.h:
 ../Core/Inc/gpio.h:
 ../Core/Inc/delay.h:
 ../Core/Inc/rs485uart.h:
 ../Core/Inc/modbusRTU.h:
+../Core/Inc/backupData.h:

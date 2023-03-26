@@ -1,0 +1,5 @@
+../Core/Src/shalf1Backup.c:31:14:backupWriteByte	24	static
+../Core/Src/shalf1Backup.c:49:10:backupReadByte	24	static
+../Core/Src/shalf1Backup.c:69:21:backupWriteArray	32	static
+../Core/Src/shalf1Backup.c:93:21:backupReadArray	32	static
+../Core/Src/shalf1Backup.c:110:16:getIDX	24	static

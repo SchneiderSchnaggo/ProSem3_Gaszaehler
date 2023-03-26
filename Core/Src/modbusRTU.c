@@ -10,6 +10,7 @@
 #include <stdio.h>
 #include <string.h>
 #include <shalf1.h>
+#include <rs485uart.h>
 
 
 

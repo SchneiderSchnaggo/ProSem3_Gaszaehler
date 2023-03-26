@@ -8,6 +8,7 @@
 #include <shalf1GPIO.h>
 #include <shalf1SysTick.h>
 #include <shalf1RCC.h>
+#include <shalf1Backup.h>
 #include <stdio.h>
 #include <inttypes.h>
 #include <string.h>
@@ -17,19 +18,20 @@
 #include "delay.h"
 #include "rs485uart.h"
 #include "modbusRTU.h"
+#include "backupData.h"
 
 #define USART_MSG_LEN  9
 
 static char usartBuff[USART_MSG_LEN];
-static char rcv;
-static int cnt = 0;
+static uint32_t cnt = 0; //G4 Gaszaehler kann 99999 m³ anzeigen, d.h. bei maximaler Volumenmessung kommt es zu 9.9999x10⁶ Zählimpulsen -> 32bit Integer
 static bool usartRXFlag = false;
 char foo;
+uint16_t tickBuff[] = {0, 0};
 
 static uint32_t tickCNT = 0;
-char ausg[20] = "ausgabe\n";
 
 void start(void){
+	tickCNT = getNumOfTicks(BKP1);
 	initRS485UART();
 	initTimer();
 	initPins();
@@ -37,7 +39,9 @@ void start(void){
 		if(usartRXFlag){
 			USART1->CR1 &= ~USART_CR1_RXNEIE_Msk;
 			gpioSetPin(GPIOB, PIN12);
-			setCounter(tickCNT);
+			getTicks(tickBuff, BKP1, sizeof(tickBuff)/sizeof(uint16_t));
+			registerWrite(0, tickBuff[1]); //Puffer drehen
+			registerWrite(1, tickBuff[0]);
 			modbusResponse(usartBuff, sizeof(usartBuff)-1);
 			USART1->CR1 |= USART_CR1_RXNEIE;
 			gpioResetPin(GPIOB, PIN12);
@@ -47,7 +51,6 @@ void start(void){
 
 	}
 }
-
 
 
 /*-----------------------------------------------------------------------------
@@ -74,6 +77,7 @@ void USART1_IRQHandler(void){
 
 void EXTI9_5_IRQHandler(void){
 	tickCNT++;
+	writeTicks(tickCNT, BKP1);
 	gpioTogglePin(GPIOC, PIN4); //optional for debugging
 	EXTI->PR |= EXTI_PR_PR9;
 }

@@ -31,6 +31,7 @@ Core/Src/main.o: ../Core/Src/main.c ../Core/Inc/main.h \
  ../Core/Inc/shalf1GPIO.h ../Core/Inc/shalf1I2C.h ../Core/Inc/shalf1RCC.h \
  ../Core/Inc/shalf1SPI.h ../Core/Inc/shalf1SysTick.h \
  ../Core/Inc/shalf1Timer.h ../Core/Inc/shalf1USART.h \
+ ../Core/Inc/shalf1Backup.h \
  ../Drivers/CMSIS/Device/ST/STM32F1xx/Include/system_stm32f1xx.h \
  ../Core/Inc/program.h
 ../Core/Inc/main.h:
@@ -72,5 +73,6 @@ Core/Src/main.o: ../Core/Src/main.c ../Core/Inc/main.h \
 ../Core/Inc/shalf1SysTick.h:
 ../Core/Inc/shalf1Timer.h:
 ../Core/Inc/shalf1USART.h:
+../Core/Inc/shalf1Backup.h:
 ../Drivers/CMSIS/Device/ST/STM32F1xx/Include/system_stm32f1xx.h:
 ../Core/Inc/program.h:
