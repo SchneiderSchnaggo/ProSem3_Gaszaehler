@@ -7,6 +7,11 @@
 #include <gpio.h>
 #include <shalf1.h>
 
+
+/*
+  * Desc.: GPIO-Pininitialisierung
+  * @return: none
+  */
 void initPins(){
 	gpioInitPort(GPIOC);
 	gpioSetupPin(GPIOC, PIN4, OUT_2MHZ);
@@ -24,6 +29,10 @@ void initPins(){
 	gpioResetPin(GPIOB, PIN12);
 }
 
+/*
+  * Desc.: Taktsignal für Ausgänge
+  * @return: none
+  */
 void outputClock(){
 	gpioInitPort(GPIOA);
 	afioInit();
