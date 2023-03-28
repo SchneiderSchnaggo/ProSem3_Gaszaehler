@@ -2,5 +2,4 @@
 ../Core/Src/modbusRTU.c:35:22:registerWrite	16	static
 ../Core/Src/modbusRTU.c:45:22:setSlaveAddress	16	static
 ../Core/Src/modbusRTU.c:50:17:modbusCRC	24	static
-../Core/Src/modbusRTU.c:68:13:modbusResponse	56	dynamic
-../Core/Src/modbusRTU.c:111:6:setCounter	16	static
+../Core/Src/modbusRTU.c:68:13:modbusResponse	96	dynamic

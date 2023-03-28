@@ -12,6 +12,7 @@
 #include <stdio.h>
 #include <inttypes.h>
 #include <string.h>
+#include "usbd_cdc_if.h"
 
 //projectspecific includes:
 #include "gpio.h"
@@ -51,7 +52,6 @@ void start(void){
 
 	}
 }
-
 
 /*-----------------------------------------------------------------------------
 +++++++++++++++++++++++++++++++ISR+++++++++++++++++++++++++++++++++++++++++++++
