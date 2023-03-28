@@ -11,6 +11,8 @@
 
 bool timFlag = false;
 
+//TestPush
+
 void initTimer(void){
 	__disable_irq();
 	timerBusClkOn(TIM2);
